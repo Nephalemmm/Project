@@ -1,0 +1,16 @@
+{
+  "name": "11",
+  "version": "1.0.0",
+  "description": "",
+  "main": "connection.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^8.0.1",
+    "mongoose": "^5.9.26"
+  }
+}

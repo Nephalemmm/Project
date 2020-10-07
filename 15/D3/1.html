@@ -1,0 +1,277 @@
+<!-- <!doctype html>
+<html>
+<head>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+
+    <script>
+        d3.select("p").style("color", "green");
+    </script>
+</body>
+</html> -->
+
+
+<!-- <!doctype html>
+<html>
+<head>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+    <p id="p1">First paragraph</p>
+    <p id="p2">Second paragraph</p>
+    <script>
+        d3.select("#p2").style("color", "green");
+    </script>
+</body>
+</html> -->
+
+
+<!-- <!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+    <script>
+        d3.selectAll("p").style("color", "green");
+    </script>
+</body>
+</html> -->
+
+
+<!-- <!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <style>
+        .myclass{
+            color:'red'
+        }
+    </style>
+</head>
+<body>
+    <p class="myclass ">First paragraph</p>
+    <p>Second paragraph</p>
+    <p class="myclass ">Third paragraph</p>
+
+    <script>
+        d3.selectAll(".myclass ").style('color','green');
+    </script>
+</body>
+</html> -->
+
+
+<!-- <!doctype html>
+<html>
+<head>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+    <table>
+    <tr>
+        <td>
+            One
+        </td>
+        <td>
+            Two
+        </td>
+        <script>
+            d3.selectAll("td").style('color','green');
+        </script>
+    </tr>
+    <tr>
+        <td>
+            Three
+        </td>
+        <td>
+            Four
+        </td>
+    </tr>
+    </table>
+
+    <script>
+        
+    </script>
+</body>
+</html> -->
+
+<!-- <!doctype html>
+<html>
+<head>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+    <div>
+        <p></p>
+    </div>
+    <p></p>
+    <script>
+        d3.select("p").text("This is paragraph.")
+    </script>
+</body>
+</html> -->
+
+<!-- <!doctype html>
+<html>
+<head>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+
+    <script>
+        d3.select("body").append("p").text("Third Paragraph");;
+    </script>
+</body>
+</html> -->
+
+<!-- <!doctype html>
+<html>
+<head>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+    <div style="border:1px solid">
+        <p>First paragraph.</p>
+    </div>
+    <script>
+        d3.select("div").insert("p").text("Second paragraph.");
+    </script>
+</body>
+</html> -->
+
+<!-- <html>
+<head>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+    <p></p>
+    <p></p>
+    <p></p>
+
+    <script>
+        var data = [100, 200, 300];
+        var paragraph = d3.select("body")
+                .selectAll("p")
+                .data(data)
+                .text(function (d, i) {
+                    console.log("d: " + d);
+                    console.log("i: " + i);
+                    console.log("this: " + this);
+
+                    return d * 2;
+                });
+    </script>
+</body>
+</html> -->
+
+<!-- <!doctype html>
+<html>
+<head>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+
+    <p>Error: This is error.</p>
+    <p>Warning:This is warning.</p>
+
+<script>
+    d3.selectAll("p").style("color", function(d, i) {
+            
+            var text = this.innerText;
+            console.log(text)
+        
+            if (text.indexOf("Error") >= 0) {
+                return "red";
+            } else if (text.indexOf("Warning") >= 0) {
+                console.log(text.indexOf("Warning"))
+                return "yellow";
+            }
+    });
+</script>
+</body>
+</html> -->
+
+<!-- <!doctype html>
+<html>
+<head>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            background-color: steelblue;
+            margin:5px;
+        }
+    </style>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+<div> </div>
+<script>
+    d3.selectAll("div")
+      .on("mouseover", function(){
+          d3.select(this)
+            .style("background-color", "orange");
+
+          // Get current event info
+          console.log(d3.event);
+          
+          // Get x & y co-ordinates
+          console.log(d3.mouse(this));
+      })
+      .on("mouseout", function(){
+          d3.select(this)
+            .style("background-color", "red")
+      });
+</script>
+</body>
+</html> -->
+
+<!-- <!doctype html>
+<html>
+<head>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+<p>D3 Tutorials</p>
+    <script>
+
+         var myData = ["Hello World!"];
+     
+         var p = d3.select("body")
+                .selectAll("p")
+                .data(myData)
+                .text(function (d) {
+                    return d;
+                });
+     
+    </script>
+</body>
+</html> -->
+
+<!doctype html>
+<html>
+<head>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+
+<script>
+    var data = [4, 1, 6, 2, 8, 9];
+    var body = d3.select("body")
+                .selectAll("div")
+                .data(data)
+                .enter()
+                .append("div")
+                .text(function(d) { return d + " "; });
+</script>
+</body>
+</html>

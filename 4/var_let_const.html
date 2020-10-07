@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //     function run (){
+    //     var foo = "Foo";
+    //     var bar = "Bar";
+
+    //     console.log(foo, bar);
+
+    //     {
+    //         let baz = "Bazz"
+    //         console.log(baz);
+    //     }
+
+    //     console.log(baz);
+    // }
+    // run()
+
+    // var func = [];
+    // for(let i = 0; i < 3; i++){
+    //     func[i] = function(){
+    //         console.log("My value:" + i)
+    //     }
+    // }
+
+    // for(var j = 0; j < 3; j++){
+    //     func[j]()
+    // }
+
+    // ( function run(){
+    //     console.log(foo)
+    //     var foo = "Foo"
+    //     console.log(foo)
+    // })();
+
+    // let foo = "foo1"
+    // let foo = "foo2"
+
+    function outerFunction(){
+        var outerFunction = 100;
+        function innerFunction(){
+            console.log(a)
+        }
+        return innerFunction;
+    }
+
+    var inner = outerFunction(10,20)
+    inner();
+
+    </script>
+</body>
+</html>

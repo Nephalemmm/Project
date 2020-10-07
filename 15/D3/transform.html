@@ -1,0 +1,99 @@
+<!-- ​<!doctype html>
+<html>
+<head>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<style>
+    svg rect {
+        fill: orange;
+    }
+
+    svg text {
+        fill:white;
+        font: 10px sans-serif;
+        text-anchor: end;
+    }
+</style>
+<body>
+    <svg class="chart" width="420" height="120">
+        <g transform="translate(0,0)">
+            <rect width="50" height="19"></rect>
+            <text x="47" y="9.5" dy=".35em">5</text>
+        </g>
+        <g transform="translate(0,20)">
+            <rect width="100" height="19"></rect>
+            <text x="97" y="9.5" dy=".35em">10</text>
+        </g>
+        <g transform="translate(0,40)">
+            <rect width="120" height="19"></rect>
+            <text x="117" y="9.5" dy=".35em">12</text>
+        </g>
+    </svg>
+</body> -->
+
+<html>
+<head>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <style>
+        svg rect {
+            fill: orange;
+        }
+
+        svg text {
+             fill:white;
+            font: 10px sans-serif;
+            text-anchor: end;
+        }
+    </style>
+</head>
+<body>
+<script>
+	var width = 500;
+	var height = 500;
+
+	var data = [10, 15, 20, 25, 30];
+	var colors = ['#ffffcc','#c2e699','#78c679','#31a354','#006837'];
+
+	var svg = d3.select("body")
+				.append("svg")
+				.attr("width", width)
+				.attr("height", height);
+
+	var g = svg.selectAll("g")
+				.data(data)
+				.enter()
+				.append("g")
+				.attr("transform", function(d, i) {
+					return "translate(0,0)";
+				})
+
+		g.append("circle")
+		  .attr("cx", function(d, i) {
+				return i*100 + 50;
+		  })
+		  .attr("cy", function(d, i) {
+				return 100;
+		  })
+		  .attr("r", function(d) {
+				return d*1.5;
+		  })
+		  .attr("fill", function(d, i){
+                return colors[i];
+                // return "red";
+		  })
+
+		g.append("text")
+		 .attr("x", function(d, i) {
+				return i * 100 + 45;
+		 })
+		 .attr("y", 105)
+		 .attr("stroke", "teal")
+		 .attr("font-size", "12px")
+		 .attr("font-family", "sans-serif")
+		 .text(function(d) {
+				return d;
+		 });
+
+</script>
+</body>
+</html>

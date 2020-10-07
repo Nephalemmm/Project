@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type = "text" id = "input">
+        <input type = "button" value = "click" onclick = changeFunction()>
+        <p id = "res"></p>
+    </div>
+</body>
+
+<script>
+    const changeFunction = () => {
+        let text = document.getElementById("input").value;
+        document.getElementById("res").innerHTML = text;
+    }
+</script>
+
+</html>
